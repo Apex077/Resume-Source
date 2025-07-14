@@ -23,7 +23,7 @@ jobs:
           compiler: pdflatex
           args: -interaction=nonstopmode
       - run: mv main.pdf resume.pdf
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: resume-pdf
           path: resume.pdf
