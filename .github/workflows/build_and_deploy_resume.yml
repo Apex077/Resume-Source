@@ -1,0 +1,50 @@
+name: Build LaTeX Resume and Deploy to Portfolio
+
+on:
+  push:
+    branches:
+      - main # Or 'master' if that's your default branch for resume source
+    paths:
+      - '**/*.tex' # Trigger on any .tex file changes
+      - '**/*.bib' # Trigger on any .bib file changes
+      - '**/*.png' # Trigger on image changes, if your resume uses them
+      - '**/*.jpg' # Add other image formats as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode
+      - run: mv main.pdf resume.pdf
+      - uses: actions/upload-artifact@v3
+        with:
+          name: resume-pdf
+          path: resume.pdf
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: resume-pdf
+      - uses: actions/checkout@v4
+        with:
+          repository: Apex077/Portfolio-V2
+          path: portfolio
+          token: ${{ secrets.DEPLOY_TOKEN }}
+      - run: |
+          mv resume.pdf portfolio/public/resume.pdf
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          working_directory: portfolio
+          commit_message: 'Automated: update resume [skip ci]'
+          file_pattern: public/resume.pdf
+          token: ${{ secrets.DEPLOY_TOKEN }}
