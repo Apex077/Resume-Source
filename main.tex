@@ -1,0 +1,132 @@
+\documentclass[10pt, letterpaper]{article} % Using article class as a base for flexibility
+
+% --- PACKAGES ---
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc}    % Output font encoding for PDF
+% Adjust margins to be slightly smaller to fit more content
+\usepackage[left=0.7in, right=0.7in, top=0.7in, bottom=0.7in]{geometry}
+\usepackage{hyperref}       % For clickable links
+\usepackage{enumitem}       % For customizing list environments
+\usepackage{ragged2e}       % For \RaggedRight (left alignment)
+\usepackage{titlesec}       % For customizing section titles
+
+% --- CUSTOMIZATION ---
+% Customize section titles for a professional look with line below
+\titleformat{\section}{\large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
+% Reduce vertical space above and below section titles even more for compactness
+\titlespacing*{\section}{0pt}{0.75ex plus .1ex minus .1ex}{0.75ex plus .1ex}
+
+% Further reduce itemize spacing to be more compact but still legible
+\setlist[itemize]{
+    noitemsep,     % Remove vertical space between list items
+    topsep=0.05em,  % Small space before the first item
+    partopsep=0em, % Space between paragraph and list
+    parsep=0em,    % Space between paragraphs within an item
+    itemsep=0.05em, % Very small space between individual items
+    leftmargin=*,  % Aligns with the left margin of the surrounding text
+    after=\vspace{-0.8\baselineskip} % Reduce space after the list even more
+}
+
+\begin{document}
+
+\RaggedRight % Ensures left alignment for the entire document content
+
+% --- PERSONAL INFORMATION ---
+% Name and contact info left-aligned and more compact
+{\Large\bfseries Dharaneesh Panneer Selvam} \\
+\vspace{0.1em} % Very small space after name
+dharaneesh.panneerselvam7@gmail.com $|$ 9980696238 $|$ Bengaluru, India \\
+\href{https://dharaneesh-p.vercel.app/}{Portfolio} $|$ \href{https://linkedin.com/in/dharaneesh-panneer-selvam}{LinkedIn} $|$ \href{https://github.com/Apex077}{Github} \\
+\vspace{0.1em} % Small space after contact info block
+
+% --- EDUCATION ---
+\section*{EDUCATION}
+\textbf{B. Tech Computer Science and Engineering - (Cybersecurity)} \hfill \textbf{08/2023-present} \\
+Shiv Nadar University, Chennai \hfill Chennai, India \\
+CGPA: 8.79 (till Semester 3)
+
+\textbf{Delhi Public School, Electronic City} \hfill \textbf{06/2021-04/2023} \\
+Stream: PCMB \hfill Bengaluru, India \\
+CBSE 12th Board Exams: 94\%
+
+% --- SKILLS ---
+\section*{SKILLS}
+% No explicit \vspace needed here as titlespacing takes care of it
+\textbf{Cybersecurity:} MetaSploit Framework, Bash Scripting, Penetration Testing, Networking \\
+\textbf{Extracurricular Skills:} Good Speaker, Communication, Teamwork \\
+\textbf{DevOps:} Docker, Kubernetes \\
+\textbf{Programming Languages:} C/C++, Python, Java, Flutter (Mobile App Development) \\
+\textbf{Web Development:} HTML/CSS, Javascript, NextJS, React + Vite, MongoDB
+
+% --- PROJECTS --- % Reduced space before next section
+\section*{PROJECTS}
+% No explicit \vspace needed here as titlespacing takes care of it
+\textbf{SecureWatch File Integrity Monitoring App (React+Vite, Flask)} \hfill \textbf{03/2025-03/2025} \\
+File Integrity Monitoring App using Python
+\begin{itemize}
+    \item Designed and developed as a mini project for \textbf{detecting unauthorized system file changes}.
+    \item Implemented a Flask backend to track file changes with SHA256 hashing, \textbf{ensuring tamper-proof logs}.
+    \item Built an interactive UI using React + Vite to \textbf{visualize live monitoring data and alerts}, for gaining insights.
+    \item Enabled secure auditing through real-time log generation and hashing, \textbf{reducing detection time by around 80 \%} compared to traditional solutions.
+\end{itemize}
+
+\vspace{0.85em} % Reduced space between project entries
+\textbf{IoT-based Smart Crop-Monitoring System (Flutter, ThingSpeak, Python)} \hfill \textbf{12/2024-01/2025} \\
+Prediction of pest likelihood using sensor data with Flutter
+\begin{itemize}
+    \item Built a \textbf{Flutter-based mobile app} to deliver pest risk predictions using models trained on sensor and visual data, \textbf{reducing false positives by 50\%}.
+    \item Integrated multiple sensors with \textbf{ESP8266 + Raspberry Pi} for real-time environmental tracking and edge processing, \textbf{enhancing offline reliability}. 
+    \item Deployed \textbf{LoRaWAN} for long-range communication, \textbf{improving analytics even in low-connectivity zones by 60\%}. 
+\end{itemize}
+
+\vspace{0.85em} % Reduced space between project entries
+\textbf{ShopGuide AR Shopping App (ViroReact, React-Native)} \hfill \textbf{11/2024-12/2024} \\
+An AR-enabled shopping app for better accessibility.
+\begin{itemize}
+    \item Uses ViroReact for \textbf{indoor step-by-step navigation}, improving accessibility through \textbf{voiced directions}.
+    \item Developed a smart algorithm to generate personalized shopping lists based on dietary preferences and inventory. 
+    \item Improved accessibility while \textbf{reducing dependence on store employees by an estimated 40\%}.
+\end{itemize}
+
+% --- PROFESSIONAL EXPERIENCE ---
+\vspace{0.75em} % Reduced space before next section
+\section*{PROFESSIONAL EXPERIENCE}
+% No explicit \vspace needed here as titlespacing takes care of it
+\textbf{Cloud Security Intern} \hfill \textbf{05/2025-present} \\
+Dilligen Technologies Pvt. Ltd. \hfill Bengaluru, India
+\begin{itemize}
+    \item Worked on \textbf{deploying Kubernetes clusters} via Rancher
+    \item Ensured \textbf{minimal downtime} with \textbf{automated monitoring and alerting} with \textbf{Grafana and Prometheus}.
+    \item Developed and \textbf{maintained Docker Compose YAML files} for containerized environments.
+\end{itemize}
+
+% --- ACHIEVEMENTS ---
+\vspace{0.75em} % Reduced space before next section
+\section*{ACHIEVEMENTS}
+% No explicit \vspace needed here as titlespacing takes care of it
+\textbf{Innovate-X Hackathon, 2025} \hfill \textbf{02/2025-03/2025} \\
+SSN College of Engineering, Chennai
+\begin{itemize}
+    \item Won 2nd Place at the Hackathon for developing an IoT-based soil monitoring system.
+\end{itemize}
+
+\vspace{0.95em} % Reduced space between achievement entries
+\textbf{Uzhavu Hackathon, 2025} \\
+Shaastra Tech Fest 2025, IIT-Madras
+\begin{itemize}
+    \item One of the top 10 teams out of 30 total teams in the final round.
+\end{itemize}
+
+\vspace{0.95em} % Reduced space between achievement entries
+\textbf{Cybersecurity}
+\begin{itemize}
+    \item Ranked in the top 4\% on TryHackMe, a leading cybersecurity education platform.
+\end{itemize}
+
+\vspace{0.95em} % Reduced space between achievement entries
+\textbf{Other Hackathons}
+\begin{itemize}
+    \item Participated in SNU Hacks and Envithon Hackathon.
+\end{itemize}
+
+\end{document}
